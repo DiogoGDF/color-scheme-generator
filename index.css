@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #131923;
     color: #D5D4D8;
     display: flex;
@@ -8,10 +9,52 @@ html, body {
     align-items: center;
     font-family: "Inter", sans-serif;
 }
-
+/* sections */
 main {
     width: 550px;
     height: 550px;
     background-color: #1F2937;
     border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 15px;
+}
+
+/* buttons */
+button, select {
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+}
+
+.main-color {
+    border: 4px solid #E5E5E5;
+    background-color: #F55A5A;
+    width: 61px;
+    height: 43px;
+}
+
+select {
+    width: 312px;
+    background-color: #1F293A;
+    color: #D5D4D8;
+    border: solid 1px #D1D5DB;
+    border-radius: 6px;
+    padding: 0 13px;
+    font-size: 16px;
+}
+
+select:focus {
+    outline: none;
+}
+
+.btn-get-color {
+    background-color: #3D4B60;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 13px 11px;
 }
