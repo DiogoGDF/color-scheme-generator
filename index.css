@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #131923;
+    color: #D5D4D8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 550px;
+    height: 550px;
+    background-color: #1F2937;
+    border-radius: 5px;
+}
