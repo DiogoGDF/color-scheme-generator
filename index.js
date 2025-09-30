@@ -1,7 +1,14 @@
+const modal = document.getElementById('modal')
 
 document.addEventListener('click', e => {
     if (e.target.id === 'get-color-btn'){
         handleGetColorScheme()
+    }
+    else if (e.target.id === 'main-color'){
+        handleMainColorClick()
+    }
+    else if (e.target.id === 'modal-btn'){
+        handleModalClick()
     }
 })
 
@@ -18,4 +25,14 @@ function handleGetColorScheme() {
             document.getElementById(`text-${index+1}`).textContent = color.hex.value
         })
     })
+}
+
+function handleMainColorClick(){
+    modal.style.display = 'flex'
+}
+
+function handleModalClick(){
+    modal.style.display = 'none'
+    handleGetColorScheme()
+    document.getElementById('main-color').style.backgroundColor = document.getElementById('color-inpt').value
 }

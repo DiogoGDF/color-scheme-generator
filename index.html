@@ -8,7 +8,7 @@
     <body>
         <div class="generator">
             <header>
-                <button class="main-color"></button>
+                <button id="main-color" class="main-color"></button>
                 <select id="scheme" name="scheme">
                     <option value="monochrome">Monochrome</option>
                     <option value="monochrome-dark">Monochrome-dark</option>
@@ -34,9 +34,9 @@
                 <p id="text-4">#AAD1B6</p>
                 <p id="text-5">#A626D3</p>
             </footer>
-            <div class="modal">
+            <div id="modal" class="modal">
                 <input id="color-inpt" class="scheme" type="text" placeholder="Color hex">
-                <button class="btn-get-color">Generate scheme</button>
+                <button id="modal-btn" class="btn-get-color">Generate scheme</button>
             </div>
         </div>
         <script src="index.js"></script>
