@@ -38,7 +38,25 @@ footer {
     height: 46px;
 }
 
-/* buttons */
+.modal {
+    display: none;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 320px;
+    height: 100px;
+    background-color: #1F293A;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 0 10px black;
+    border: 2px solid #E5E5E5;
+    border-radius: 6px;
+}
+
+/* buttons select input */
 button, select {
     cursor: pointer;
     font-family: "Inter", sans-serif;
@@ -51,14 +69,17 @@ button, select {
     height: 43px;
 }
 
-select {
-    width: 312px;
+select, input {
     background-color: #1F293A;
     color: #D5D4D8;
     border: solid 1px #D1D5DB;
-    border-radius: 6px;
-    padding: 0 13px;
     font-size: 16px;
+}
+
+select {
+    width: 312px;
+    padding: 0 13px;
+    border-radius: 6px;
 }
 
 select:focus {
@@ -72,6 +93,12 @@ select:focus {
     font-size: 12px;
     border-radius: 4px;
     padding: 13px 11px;
+}
+
+input {
+    width: 150px;
+    padding: 9px;
+    border-radius: 4px;
 }
 
 /* colors (temporary) */
