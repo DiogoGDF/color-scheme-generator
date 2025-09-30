@@ -8,6 +8,7 @@ html, body {
     justify-content: center;
     align-items: center;
     font-family: "Inter", sans-serif;
+    font-size: 12px;
 }
 
 /* sections */
@@ -33,6 +34,8 @@ main {
 footer {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    height: 46px;
 }
 
 /* buttons */
