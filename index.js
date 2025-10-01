@@ -49,10 +49,15 @@ function handleColorClick(id){
     navigator.clipboard.writeText(color)
 }
 
+function handleTextClick(id){
+    const color = document.getElementById(id).textContent
+    navigator.clipboard.writeText(color)
+}
+
 function rgbToHex(rgb) {
     const result = rgb.match(/\d+/g).map(Number)
-    return result
-        .map(x => x.toString(16).padStart(2, "0"))
-        .join("")
+    return '#' + result
+        .map(x => x.toString(16).padStart(2, '0'))
+        .join('')
         .toUpperCase()
 }
