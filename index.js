@@ -52,11 +52,23 @@ function handleModalClick(){
 function handleColorClick(id){
     const color = rgbToHex(document.getElementById(id).style.backgroundColor)
     navigator.clipboard.writeText(color)
+
+    const textEl = document.getElementById(`text-${id.slice(-1)}`)
+    showCopiedText(textEl, color)
 }
 
 function handleTextClick(id){
-    const color = document.getElementById(id).textContent
+    const colorEl = document.getElementById(id)
+    const color = colorEl.textContent
+
     navigator.clipboard.writeText(color)
+    showCopiedText(colorEl, color)
+}
+
+function showCopiedText(colorEl, color){
+    colorEl.textContent = 'Copied!'
+    setTimeout(() => colorEl.textContent = color, 800)
+
 }
 
 function rgbToHex(rgb) {
