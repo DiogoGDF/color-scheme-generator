@@ -10,12 +10,18 @@ document.addEventListener('click', e => {
     }
     else if (e.target.id === 'modal-btn'){
         handleModalClick()
+    } 
+    else if (e.target.id.startsWith('color-')) {
+        handleColorClick(e.target.id)
+    } 
+    else if (e.target.id.startsWith('text-')) {
+        handleTextClick(e.target.id)
     }
 })
 
 function handleGetColorScheme() {
     const mode = document.getElementById('scheme').value
-    const colorInpt = document.getElementById('color-inpt').value 
+    const colorInpt = document.getElementById('inpt').value 
     const mainColor = (colorInpt === '')? 'F55A5A' : colorInpt
 
     fetch(`https://www.thecolorapi.com/scheme?hex=${mainColor}&mode=${mode}&count=8`, {
@@ -35,5 +41,18 @@ function handleMainColorClick(){
 function handleModalClick(){
     modal.style.display = 'none'
     handleGetColorScheme()
-    document.getElementById('main-color').style.backgroundColor = document.getElementById('color-inpt').value
+    document.getElementById('main-color').style.backgroundColor = document.getElementById('inpt').value
+}
+
+function handleColorClick(id){
+    const color = rgbToHex(document.getElementById(id).style.backgroundColor)
+    navigator.clipboard.writeText(color)
+}
+
+function rgbToHex(rgb) {
+    const result = rgb.match(/\d+/g).map(Number)
+    return result
+        .map(x => x.toString(16).padStart(2, "0"))
+        .join("")
+        .toUpperCase()
 }
