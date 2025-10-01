@@ -1,4 +1,5 @@
 const modal = document.getElementById('modal')
+handleGetColorScheme()
 
 document.addEventListener('click', e => {
     if (e.target.id === 'get-color-btn'){
@@ -17,7 +18,7 @@ function handleGetColorScheme() {
     const colorInpt = document.getElementById('color-inpt').value 
     const mainColor = (colorInpt === '')? 'F55A5A' : colorInpt
 
-    fetch(`https://www.thecolorapi.com/scheme?hex=${mainColor}&mode=${mode}&count=5`, {
+    fetch(`https://www.thecolorapi.com/scheme?hex=${mainColor}&mode=${mode}&count=8`, {
         headers: {"Content-Type": "application/json"}}
     ).then(res => res.json()).then(data => {
         data.colors.forEach((color, index) => {
