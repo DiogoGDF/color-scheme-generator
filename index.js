@@ -21,7 +21,12 @@ document.addEventListener('click', e => {
 
 function handleGetColorScheme() {
     const mode = document.getElementById('scheme').value
-    const colorInpt = document.getElementById('inpt').value 
+    let colorInpt = document.getElementById('inpt').value 
+
+    if(colorInpt.startsWith('#')){
+        colorInpt = colorInpt.slice(1)
+    }
+
     const mainColor = (colorInpt === '')? 'F55A5A' : colorInpt
 
     fetch(`https://www.thecolorapi.com/scheme?hex=${mainColor}&mode=${mode}&count=8`, {
