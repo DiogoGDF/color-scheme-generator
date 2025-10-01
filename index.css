@@ -33,9 +33,14 @@ main {
 
 footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: stretch;
     align-items: center;
     height: 46px;
+}
+
+footer p {
+    flex: 1;
+    text-align: center;
 }
 
 .modal {
